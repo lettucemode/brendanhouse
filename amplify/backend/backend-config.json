@@ -1,0 +1,10 @@
+{
+  "auth": {
+    "brendanhousef32a71c5": {
+      "service": "Cognito",
+      "providerPlugin": "awscloudformation",
+      "dependsOn": [],
+      "customAuth": false
+    }
+  }
+}
