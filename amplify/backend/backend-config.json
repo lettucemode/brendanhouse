@@ -24,5 +24,11 @@
         }
       }
     }
+  },
+  "storage": {
+    "brendanhousestoragedemo": {
+      "service": "S3",
+      "providerPlugin": "awscloudformation"
+    }
   }
 }
