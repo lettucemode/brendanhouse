@@ -1,11 +1,10 @@
 import React, { useState, useEffect } from 'react';
 import './App.css';
 import { API, Storage } from 'aws-amplify';
-import { withAuthenticator, AmplifySignOut } from '@aws-amplify/ui-react';
-import { Authenticator, SignIn, SignUp, ConfirmSignUp, Greetings } from 'aws-amplify-react';
 import { listTodos } from './graphql/queries';
 import { createTodo as createTodoMutation, deleteTodo as deleteTodoMutation } from './graphql/mutations';
 import { Todo } from './models/index';
+import { AuthComponent } from './components/AuthComponent'
 
 const initialFormState: any = { name: '', description: '' }
 
@@ -22,10 +21,12 @@ function App() {
     const todosFromAPI = apiData.data.listTodos.items;
     await Promise.all(todosFromAPI.map(async (todo: Todo) => {
       if (todo.image) {
-        const image = await Storage.get(todo.image) as any;
+        const image = await Storage.get(todo.image);
+        console.log(todo);
+        console.log(image);
         return Todo.copyOf(todo, updated => {
-          updated.image = image;
-        })
+          updated.image = image as any;
+        });
       }
       return todo;
     }));
@@ -61,9 +62,7 @@ function App() {
 
   return (
     <div className="App">
-      <Authenticator hideDefault={true} >
-        <Greetings inGreeting="hi" outGreeting="goodbye" />
-      </Authenticator>
+      <AuthComponent />
       <h1>My Todos App</h1>
       <input
         onChange={e => setFormData({ ...formData, 'name': e.target.value})}
