@@ -1,0 +1,5 @@
+customHeaders:
+  - pattern: '*'
+    headers:
+    - key: 'Permissions-Policy'
+      value: 'interest-cohort=()'
