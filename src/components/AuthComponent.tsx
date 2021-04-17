@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { useUser } from '../util/auth';
 
+import Container from 'react-bootstrap/Container';
 import Form from 'react-bootstrap/Form';
 import Col from 'react-bootstrap/Col';
 import Button from 'react-bootstrap/Button';
@@ -48,20 +49,29 @@ export function AuthComponent() {
   
   // not signed in
   return (
-    <Form>
-      <Form.Row>
-        <Form.Group as={Col} controlId="formUsername">
-          <Form.Label>Username</Form.Label>
-          <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
-        </Form.Group>
-        <Form.Group as={Col} controlId="formPassword">
-          <Form.Label>Password</Form.Label>
-          <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
-        </Form.Group>
-        <Button variant="primary" type="button" onClick={() => {
-          login(username, password);
-        }}>Sign in</Button>
-      </Form.Row>
-    </Form>
+    <Container className="h-100 d-flex justify-content-center align-items-center">
+      <Form className="border p-2">
+        <div>
+          Sign in to access this page.
+        </div>
+        <Form.Row>
+          <Form.Group as={Col} controlId="formUsername" className="align-self-center">
+            <Form.Label>Username</Form.Label>
+            <Form.Control type="text" value={username} onChange={e => setUsername(e.target.value)} />
+          </Form.Group>
+          <Form.Group as={Col} xl={6} controlId="formPassword" className="align-self-center">
+            <Form.Label>Password</Form.Label>
+            <Form.Control type="password" value={password} onChange={e => setPassword(e.target.value)} />
+          </Form.Group>
+        </Form.Row>
+        <Form.Row className="justify-content-center">
+          <Col className="col-md-auto">
+            <Button variant="primary" type="button" onClick={() => {
+              login(username, password);
+            }}>Sign in</Button>
+          </Col>
+        </Form.Row>
+      </Form>
+    </Container>
   );
 }
