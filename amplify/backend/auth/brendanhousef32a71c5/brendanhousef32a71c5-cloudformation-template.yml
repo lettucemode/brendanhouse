@@ -211,6 +211,10 @@ Resources:
       SmsConfiguration:
         SnsCallerArn: !GetAtt SNSRole.Arn
         ExternalId: brendaf32a71c5_role_external_id
+      
+      # added by me: only admins can create users
+      AdminCreateUserConfig:
+        AllowAdminCreateUserOnly: true
     
   
   UserPoolClientWeb:

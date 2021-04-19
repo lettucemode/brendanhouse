@@ -1,14 +1,14 @@
 {
-  "staging": {
+  "prod": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-amplify3a8589e9ead24-staging-12024-authRole",
-      "UnauthRoleArn": "arn:aws:iam::782809024315:role/amplify-amplify3a8589e9ead24-staging-12024-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::782809024315:role/amplify-amplify3a8589e9ead24-staging-12024-authRole",
+      "AuthRoleName": "amplify-brendanhouse-prod-193950-authRole",
+      "UnauthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-prod-193950-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-prod-193950-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-amplify3a8589e9ead24-staging-12024-deployment",
-      "UnauthRoleName": "amplify-amplify3a8589e9ead24-staging-12024-unauthRole",
-      "StackName": "amplify-amplify3a8589e9ead24-staging-12024",
-      "StackId": "arn:aws:cloudformation:us-east-2:782809024315:stack/amplify-amplify3a8589e9ead24-staging-12024/c3089b00-98d1-11eb-9df1-064b4169a560",
+      "DeploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
+      "UnauthRoleName": "amplify-brendanhouse-prod-193950-unauthRole",
+      "StackName": "amplify-brendanhouse-prod-193950",
+      "StackId": "arn:aws:cloudformation:us-east-2:782809024315:stack/amplify-brendanhouse-prod-193950/61dd0110-a09f-11eb-a7b7-06eabac67bae",
       "AmplifyAppId": "d3iscs5oi8hzql"
     },
     "categories": {

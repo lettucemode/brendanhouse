@@ -1,6 +1,6 @@
 {
     "identityPoolName": "brendanhousef32a71c5_identitypool_f32a71c5",
-    "allowUnauthenticatedIdentities": false,
+    "allowUnauthenticatedIdentities": true,
     "resourceNameTruncated": "brendaf32a71c5",
     "userPoolName": "brendanhousef32a71c5_userpool_f32a71c5",
     "autoVerifiedAttributes": [
