@@ -4,7 +4,6 @@ import { Switch, Route, Link } from 'react-router-dom';
 import Docs from './components/Docs';
 
 function App() {
-
   return (
     <>
       <Switch>
