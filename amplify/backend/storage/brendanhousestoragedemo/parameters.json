@@ -28,8 +28,8 @@
     "s3PrivatePolicy": "Private_policy_992b2466",
     "AuthenticatedAllowList": "ALLOW",
     "s3ReadPolicy": "read_policy_992b2466",
-    "s3PermissionsGuestPublic": "DISALLOW",
-    "s3PermissionsGuestUploads": "DISALLOW",
+    "s3PermissionsGuestPublic": "s3:ListBucket",
+    "s3PermissionsGuestUploads": "s3:PutObject",
     "GuestAllowList": "DISALLOW",
     "triggerFunction": "NONE"
 }
