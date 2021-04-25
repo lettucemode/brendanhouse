@@ -638,7 +638,9 @@
 										"public/",
 										"public/*",
 										"protected/",
-										"protected/*"
+										"protected/*",
+										"uploads/",
+										"uploads/*"
 									]
 								}
 							}
