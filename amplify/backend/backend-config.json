@@ -7,26 +7,9 @@
       "customAuth": false
     }
   },
-  "api": {
-    "notesapp2": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "API_KEY",
-            "apiKeyConfig": {
-              "apiKeyExpirationDays": 7,
-              "description": "demo"
-            }
-          },
-          "additionalAuthenticationProviders": []
-        }
-      }
-    }
-  },
+  "api": {},
   "storage": {
-    "brendanhousestoragedemo": {
+    "brendanhousestorage": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
     }
