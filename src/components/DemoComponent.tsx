@@ -1,11 +1,11 @@
 import { useState, useEffect } from 'react';
 import { Storage } from 'aws-amplify';
-import { Todo } from '../models/index';
+// import { Todo } from '../models/index';
 
 const initialFormState: any = { name: '', description: '' };
 
 function Demo() {
-  const [todos, setTodos] = useState<Todo[]>([]);
+  // const [todos, setTodos] = useState<Todo[]>([]);
   const [formData, setFormData] = useState(initialFormState);
 
   useEffect(() => {
@@ -36,7 +36,7 @@ function Demo() {
     //   const image = await Storage.get(formData.image);
     //   formData.image = image;
     // }
-    setTodos([...todos, formData]);
+    // setTodos([...todos, formData]);
     setFormData(initialFormState);
   }
 
@@ -73,14 +73,14 @@ function Demo() {
       <input type="file" onChange={(e: any) => onChange(e)} />
       <button onClick={createTodo}>Create Todo</button>
       <div style={{ marginBottom: 30 }}>
-        {todos.map((todo: Todo) => (
+        {/* {todos.map((todo: Todo) => (
           <div key={todo.id || todo.name}>
             <h2>{todo.name}</h2>
             <p>{todo.description}</p>
             <button onClick={() => deleteTodo(todo)}>Delete note</button>
             {todo.image && <img src={todo.image} style={{ width: 400 }} alt="" />}
           </div>
-        ))}
+        ))} */}
       </div>
       {/* <AmplifySignOut /> */}
     </div>
