@@ -9,8 +9,8 @@ import { Link } from 'react-router-dom';
 
 function Header() {
   return (
-    <Container>
-      <Navbar bg="light" expand="lg">
+    <Container fluid>
+      <Navbar bg="light" expand="md">
         <Navbar.Brand as={Link} to="/">
           Brendan House
         </Navbar.Brand>

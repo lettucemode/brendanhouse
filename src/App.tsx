@@ -3,6 +3,7 @@ import Jumbotron from 'react-bootstrap/Jumbotron';
 import { Switch, Route } from 'react-router-dom';
 import Docs from './components/Docs';
 import Header from './components/Header';
+import Footer from './components/Footer';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
           <Link to="/docs/3">Three</Link> */}
         </Route>
       </Switch>
+      <Footer />
     </>
   );
 }
