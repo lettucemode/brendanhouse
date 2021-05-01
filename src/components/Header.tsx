@@ -21,7 +21,7 @@ function Header() {
               Home
             </Nav.Link>
             <Nav.Link as={Link} to="/docs/4">
-              Link
+              Documents
             </Nav.Link>
             <NavDropdown title="Dropdown" id="basic-nav-dropdown">
               <NavDropdown.Item as={Link} to="#action/3.1">

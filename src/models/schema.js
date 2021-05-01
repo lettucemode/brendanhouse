@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "Blog": {
-            "name": "Blog",
+        "File": {
+            "name": "File",
             "fields": {
                 "id": {
                     "name": "id",
@@ -17,118 +17,8 @@ export const schema = {
                     "isRequired": true,
                     "attributes": []
                 },
-                "posts": {
-                    "name": "posts",
-                    "isArray": true,
-                    "type": {
-                        "model": "Post"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "blog"
-                    }
-                }
-            },
-            "syncable": true,
-            "pluralName": "Blogs",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                }
-            ]
-        },
-        "Post": {
-            "name": "Post",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "title": {
-                    "name": "title",
-                    "isArray": false,
-                    "type": "String",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "blog": {
-                    "name": "blog",
-                    "isArray": false,
-                    "type": {
-                        "model": "Blog"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "blogID"
-                    }
-                },
-                "comments": {
-                    "name": "comments",
-                    "isArray": true,
-                    "type": {
-                        "model": "Comment"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "isArrayNullable": true,
-                    "association": {
-                        "connectionType": "HAS_MANY",
-                        "associatedWith": "post"
-                    }
-                }
-            },
-            "syncable": true,
-            "pluralName": "Posts",
-            "attributes": [
-                {
-                    "type": "model",
-                    "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byBlog",
-                        "fields": [
-                            "blogID"
-                        ]
-                    }
-                }
-            ]
-        },
-        "Comment": {
-            "name": "Comment",
-            "fields": {
-                "id": {
-                    "name": "id",
-                    "isArray": false,
-                    "type": "ID",
-                    "isRequired": true,
-                    "attributes": []
-                },
-                "post": {
-                    "name": "post",
-                    "isArray": false,
-                    "type": {
-                        "model": "Post"
-                    },
-                    "isRequired": false,
-                    "attributes": [],
-                    "association": {
-                        "connectionType": "BELONGS_TO",
-                        "targetName": "postID"
-                    }
-                },
-                "content": {
-                    "name": "content",
+                "s3key": {
+                    "name": "s3key",
                     "isArray": false,
                     "type": "String",
                     "isRequired": true,
@@ -136,26 +26,16 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Comments",
+            "pluralName": "Files",
             "attributes": [
                 {
                     "type": "model",
                     "properties": {}
-                },
-                {
-                    "type": "key",
-                    "properties": {
-                        "name": "byPost",
-                        "fields": [
-                            "postID",
-                            "content"
-                        ]
-                    }
                 }
             ]
         }
     },
     "enums": {},
     "nonModels": {},
-    "version": "7f92f26e1ff07da47b2e1b6f4cc28c51"
+    "version": "3c325c63f1cb5e3f40c84b37057fc112"
 };
