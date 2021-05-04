@@ -11,26 +11,25 @@ export interface S3Object {
   size: number;
 }
 
-const S3Service = {
-  putFileUpload: function (key: string, object: any): Promise<S3Key> {
-    return Storage.put(key, object, { level: 'public', customPrefix: { public: 'uploads/' } }).then(
-      (val: Object) => val as S3Key
-    );
+export const S3Service = {
+  putFileUpload: async function (key: string, object: any): Promise<S3Key> {
+    const val = await Storage.put(key, object, { level: 'public', customPrefix: { public: 'uploads/' } });
+    return val as S3Key;
   },
-  putFilePublic: function (key: string, object: any): Promise<S3Key> {
-    return Storage.put(key, object).then((val: Object) => val as S3Key);
+  putFilePublic: async function (key: string, object: any): Promise<S3Key> {
+    const val = await Storage.put(key, object);
+    return val as S3Key;
   },
-  getPresignedUrl: function (key: string): Promise<string> {
-    return Storage.get(key).then((signedUrl: Object | string) => {
-      return signedUrl.toString();
-    });
+  getPresignedUrl: async function (key: string): Promise<string> {
+    const signedUrl = await Storage.get(key);
+    return signedUrl.toString();
   },
-  listFiles: function (path: string): Promise<S3Object[]> {
-    return Storage.list(path, { level: 'public', customPrefix: { public: '' } });
+  listFiles: async function (path: string): Promise<S3Object[]> {
+    const data: any = await Storage.list(path, { level: 'public', customPrefix: { public: '' } });
+    return data as S3Object[];
   },
-  removeFile: function (key: string): Promise<any> {
-    return Storage.remove(key);
+  removeFile: async function (key: string): Promise<any> {
+    const data: any = Storage.remove(key);
+    return data;
   },
 };
-
-export default S3Service;

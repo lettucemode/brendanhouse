@@ -2,18 +2,18 @@
 /* eslint-disable */
 //  This file was automatically generated and should not be edited.
 
-export type CreateFileInput = {
+export type CreateFileRecordInput = {
   id?: string | null,
   name: string,
   s3key: string,
 };
 
-export type ModelFileConditionInput = {
+export type ModelFileRecordConditionInput = {
   name?: ModelStringInput | null,
   s3key?: ModelStringInput | null,
-  and?: Array< ModelFileConditionInput | null > | null,
-  or?: Array< ModelFileConditionInput | null > | null,
-  not?: ModelFileConditionInput | null,
+  and?: Array< ModelFileRecordConditionInput | null > | null,
+  or?: Array< ModelFileRecordConditionInput | null > | null,
+  not?: ModelFileRecordConditionInput | null,
 };
 
 export type ModelStringInput = {
@@ -56,8 +56,8 @@ export type ModelSizeInput = {
   between?: Array< number | null > | null,
 };
 
-export type File = {
-  __typename: "File",
+export type FileRecord = {
+  __typename: "FileRecord",
   id?: string,
   name?: string,
   s3key?: string,
@@ -65,23 +65,23 @@ export type File = {
   updatedAt?: string,
 };
 
-export type UpdateFileInput = {
+export type UpdateFileRecordInput = {
   id: string,
   name?: string | null,
   s3key?: string | null,
 };
 
-export type DeleteFileInput = {
+export type DeleteFileRecordInput = {
   id?: string | null,
 };
 
-export type ModelFileFilterInput = {
+export type ModelFileRecordFilterInput = {
   id?: ModelIDInput | null,
   name?: ModelStringInput | null,
   s3key?: ModelStringInput | null,
-  and?: Array< ModelFileFilterInput | null > | null,
-  or?: Array< ModelFileFilterInput | null > | null,
-  not?: ModelFileFilterInput | null,
+  and?: Array< ModelFileRecordFilterInput | null > | null,
+  or?: Array< ModelFileRecordFilterInput | null > | null,
+  not?: ModelFileRecordFilterInput | null,
 };
 
 export type ModelIDInput = {
@@ -100,20 +100,20 @@ export type ModelIDInput = {
   size?: ModelSizeInput | null,
 };
 
-export type ModelFileConnection = {
-  __typename: "ModelFileConnection",
-  items?:  Array<File | null > | null,
+export type ModelFileRecordConnection = {
+  __typename: "ModelFileRecordConnection",
+  items?:  Array<FileRecord | null > | null,
   nextToken?: string | null,
 };
 
-export type CreateFileMutationVariables = {
-  input?: CreateFileInput,
-  condition?: ModelFileConditionInput | null,
+export type CreateFileRecordMutationVariables = {
+  input?: CreateFileRecordInput,
+  condition?: ModelFileRecordConditionInput | null,
 };
 
-export type CreateFileMutation = {
-  createFile?:  {
-    __typename: "File",
+export type CreateFileRecordMutation = {
+  createFileRecord?:  {
+    __typename: "FileRecord",
     id: string,
     name: string,
     s3key: string,
@@ -122,14 +122,14 @@ export type CreateFileMutation = {
   } | null,
 };
 
-export type UpdateFileMutationVariables = {
-  input?: UpdateFileInput,
-  condition?: ModelFileConditionInput | null,
+export type UpdateFileRecordMutationVariables = {
+  input?: UpdateFileRecordInput,
+  condition?: ModelFileRecordConditionInput | null,
 };
 
-export type UpdateFileMutation = {
-  updateFile?:  {
-    __typename: "File",
+export type UpdateFileRecordMutation = {
+  updateFileRecord?:  {
+    __typename: "FileRecord",
     id: string,
     name: string,
     s3key: string,
@@ -138,14 +138,14 @@ export type UpdateFileMutation = {
   } | null,
 };
 
-export type DeleteFileMutationVariables = {
-  input?: DeleteFileInput,
-  condition?: ModelFileConditionInput | null,
+export type DeleteFileRecordMutationVariables = {
+  input?: DeleteFileRecordInput,
+  condition?: ModelFileRecordConditionInput | null,
 };
 
-export type DeleteFileMutation = {
-  deleteFile?:  {
-    __typename: "File",
+export type DeleteFileRecordMutation = {
+  deleteFileRecord?:  {
+    __typename: "FileRecord",
     id: string,
     name: string,
     s3key: string,
@@ -154,13 +154,13 @@ export type DeleteFileMutation = {
   } | null,
 };
 
-export type GetFileQueryVariables = {
+export type GetFileRecordQueryVariables = {
   id?: string,
 };
 
-export type GetFileQuery = {
-  getFile?:  {
-    __typename: "File",
+export type GetFileRecordQuery = {
+  getFileRecord?:  {
+    __typename: "FileRecord",
     id: string,
     name: string,
     s3key: string,
@@ -169,17 +169,17 @@ export type GetFileQuery = {
   } | null,
 };
 
-export type ListFilesQueryVariables = {
-  filter?: ModelFileFilterInput | null,
+export type ListFileRecordsQueryVariables = {
+  filter?: ModelFileRecordFilterInput | null,
   limit?: number | null,
   nextToken?: string | null,
 };
 
-export type ListFilesQuery = {
-  listFiles?:  {
-    __typename: "ModelFileConnection",
+export type ListFileRecordsQuery = {
+  listFileRecords?:  {
+    __typename: "ModelFileRecordConnection",
     items?:  Array< {
-      __typename: "File",
+      __typename: "FileRecord",
       id: string,
       name: string,
       s3key: string,
@@ -190,9 +190,9 @@ export type ListFilesQuery = {
   } | null,
 };
 
-export type OnCreateFileSubscription = {
-  onCreateFile?:  {
-    __typename: "File",
+export type OnCreateFileRecordSubscription = {
+  onCreateFileRecord?:  {
+    __typename: "FileRecord",
     id: string,
     name: string,
     s3key: string,
@@ -201,9 +201,9 @@ export type OnCreateFileSubscription = {
   } | null,
 };
 
-export type OnUpdateFileSubscription = {
-  onUpdateFile?:  {
-    __typename: "File",
+export type OnUpdateFileRecordSubscription = {
+  onUpdateFileRecord?:  {
+    __typename: "FileRecord",
     id: string,
     name: string,
     s3key: string,
@@ -212,9 +212,9 @@ export type OnUpdateFileSubscription = {
   } | null,
 };
 
-export type OnDeleteFileSubscription = {
-  onDeleteFile?:  {
-    __typename: "File",
+export type OnDeleteFileRecordSubscription = {
+  onDeleteFileRecord?:  {
+    __typename: "FileRecord",
     id: string,
     name: string,
     s3key: string,

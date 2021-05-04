@@ -1,7 +1,7 @@
 export const schema = {
     "models": {
-        "File": {
-            "name": "File",
+        "FileRecord": {
+            "name": "FileRecord",
             "fields": {
                 "id": {
                     "name": "id",
@@ -26,7 +26,7 @@ export const schema = {
                 }
             },
             "syncable": true,
-            "pluralName": "Files",
+            "pluralName": "FileRecords",
             "attributes": [
                 {
                     "type": "model",
@@ -37,5 +37,5 @@ export const schema = {
     },
     "enums": {},
     "nonModels": {},
-    "version": "3c325c63f1cb5e3f40c84b37057fc112"
+    "version": "6a39ba7bff7030d3802736ea4ddf7cc7"
 };

@@ -1,6 +1,6 @@
 import Button from 'react-bootstrap/Button';
 import { Link, useParams } from 'react-router-dom';
-import S3Service from '../services/s3';
+import { S3Service } from '../services/s3';
 
 function Docs() {
   let { id } = useParams() as any;

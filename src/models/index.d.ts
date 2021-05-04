@@ -4,10 +4,10 @@ import { ModelInit, MutableModel, PersistentModelConstructor } from "@aws-amplif
 
 
 
-export declare class File {
+export declare class FileRecord {
   readonly id: string;
   readonly name: string;
   readonly s3key: string;
-  constructor(init: ModelInit<File>);
-  static copyOf(source: File, mutator: (draft: MutableModel<File>) => MutableModel<File> | void): File;
+  constructor(init: ModelInit<FileRecord>);
+  static copyOf(source: FileRecord, mutator: (draft: MutableModel<FileRecord>) => MutableModel<FileRecord> | void): FileRecord;
 }

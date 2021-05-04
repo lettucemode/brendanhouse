@@ -47,7 +47,7 @@ function Demo() {
   }
 
   async function onChange(e: any) {
-    const files = e.target.files;
+    const files = (e.target as HTMLInputElement).files;
     if (!files[0]) return;
     const file = files[0];
     console.log(file);

@@ -2,9 +2,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const getFile = /* GraphQL */ `
-  query GetFile($id: ID!) {
-    getFile(id: $id) {
+export const getFileRecord = /* GraphQL */ `
+  query GetFileRecord($id: ID!) {
+    getFileRecord(id: $id) {
       id
       name
       s3key
@@ -13,13 +13,13 @@ export const getFile = /* GraphQL */ `
     }
   }
 `;
-export const listFiles = /* GraphQL */ `
-  query ListFiles(
-    $filter: ModelFileFilterInput
+export const listFileRecords = /* GraphQL */ `
+  query ListFileRecords(
+    $filter: ModelFileRecordFilterInput
     $limit: Int
     $nextToken: String
   ) {
-    listFiles(filter: $filter, limit: $limit, nextToken: $nextToken) {
+    listFileRecords(filter: $filter, limit: $limit, nextToken: $nextToken) {
       items {
         id
         name

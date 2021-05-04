@@ -2,12 +2,12 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const createFile = /* GraphQL */ `
-  mutation CreateFile(
-    $input: CreateFileInput!
-    $condition: ModelFileConditionInput
+export const createFileRecord = /* GraphQL */ `
+  mutation CreateFileRecord(
+    $input: CreateFileRecordInput!
+    $condition: ModelFileRecordConditionInput
   ) {
-    createFile(input: $input, condition: $condition) {
+    createFileRecord(input: $input, condition: $condition) {
       id
       name
       s3key
@@ -16,12 +16,12 @@ export const createFile = /* GraphQL */ `
     }
   }
 `;
-export const updateFile = /* GraphQL */ `
-  mutation UpdateFile(
-    $input: UpdateFileInput!
-    $condition: ModelFileConditionInput
+export const updateFileRecord = /* GraphQL */ `
+  mutation UpdateFileRecord(
+    $input: UpdateFileRecordInput!
+    $condition: ModelFileRecordConditionInput
   ) {
-    updateFile(input: $input, condition: $condition) {
+    updateFileRecord(input: $input, condition: $condition) {
       id
       name
       s3key
@@ -30,12 +30,12 @@ export const updateFile = /* GraphQL */ `
     }
   }
 `;
-export const deleteFile = /* GraphQL */ `
-  mutation DeleteFile(
-    $input: DeleteFileInput!
-    $condition: ModelFileConditionInput
+export const deleteFileRecord = /* GraphQL */ `
+  mutation DeleteFileRecord(
+    $input: DeleteFileRecordInput!
+    $condition: ModelFileRecordConditionInput
   ) {
-    deleteFile(input: $input, condition: $condition) {
+    deleteFileRecord(input: $input, condition: $condition) {
       id
       name
       s3key

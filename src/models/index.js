@@ -4,8 +4,8 @@ import { schema } from './schema';
 
 
 
-const { File } = initSchema(schema);
+const { FileRecord } = initSchema(schema);
 
 export {
-  File
+  FileRecord
 };

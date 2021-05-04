@@ -2,9 +2,9 @@
 /* eslint-disable */
 // this is an auto generated file. This will be overwritten
 
-export const onCreateFile = /* GraphQL */ `
-  subscription OnCreateFile {
-    onCreateFile {
+export const onCreateFileRecord = /* GraphQL */ `
+  subscription OnCreateFileRecord {
+    onCreateFileRecord {
       id
       name
       s3key
@@ -13,9 +13,9 @@ export const onCreateFile = /* GraphQL */ `
     }
   }
 `;
-export const onUpdateFile = /* GraphQL */ `
-  subscription OnUpdateFile {
-    onUpdateFile {
+export const onUpdateFileRecord = /* GraphQL */ `
+  subscription OnUpdateFileRecord {
+    onUpdateFileRecord {
       id
       name
       s3key
@@ -24,9 +24,9 @@ export const onUpdateFile = /* GraphQL */ `
     }
   }
 `;
-export const onDeleteFile = /* GraphQL */ `
-  subscription OnDeleteFile {
-    onDeleteFile {
+export const onDeleteFileRecord = /* GraphQL */ `
+  subscription OnDeleteFileRecord {
+    onDeleteFileRecord {
       id
       name
       s3key
