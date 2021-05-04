@@ -28,6 +28,10 @@
     "brendanhousestorage": {
       "service": "S3",
       "providerPlugin": "awscloudformation"
+    },
+    "ddbfiles": {
+      "service": "DynamoDB",
+      "providerPlugin": "awscloudformation"
     }
   }
 }

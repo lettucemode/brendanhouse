@@ -1,0 +1,7 @@
+{
+    "tableName": "files",
+    "partitionKeyName": "name",
+    "partitionKeyType": "S",
+    "sortKeyName": "s3key",
+    "sortKeyType": "S"
+}
