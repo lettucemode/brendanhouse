@@ -10,6 +10,6 @@
     "unauthRoleName": {
         "Ref": "UnauthRoleName"
     },
-    "rolePermissions": "dynamodb:PutItem,dynamodb:GetItem",
+    "rolePermissions": "dynamodb:PutItem,dynamodb:GetItem,dynamodb:Scan",
     "policyName": "dynamodb_policy_1baaf7b0"
 }

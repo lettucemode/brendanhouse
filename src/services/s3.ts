@@ -11,6 +11,7 @@ export interface S3Object {
   size: number;
 }
 
+// todo: change this into a class and useEffect in the components that need it
 export const S3Service = {
   putFileUpload: async function (key: string, object: any): Promise<S3Key> {
     const val = await Storage.put(key, object, { level: 'public', customPrefix: { public: 'uploads/' } });
