@@ -1,5 +1,0 @@
-type FileRecord @model {
-  id: ID!
-  name: String!
-  s3key: String!
-}

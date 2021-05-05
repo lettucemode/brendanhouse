@@ -7,23 +7,7 @@
       "customAuth": false
     }
   },
-  "api": {
-    "graphqlapi": {
-      "service": "AppSync",
-      "providerPlugin": "awscloudformation",
-      "output": {
-        "authConfig": {
-          "defaultAuthentication": {
-            "authenticationType": "AMAZON_COGNITO_USER_POOLS",
-            "userPoolConfig": {
-              "userPoolId": "authbrendanhousef32a71c5"
-            }
-          },
-          "additionalAuthenticationProviders": []
-        }
-      }
-    }
-  },
+  "api": {},
   "storage": {
     "brendanhousestorage": {
       "service": "S3",
