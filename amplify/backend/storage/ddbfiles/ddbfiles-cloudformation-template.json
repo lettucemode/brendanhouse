@@ -21,6 +21,18 @@
         
         "tableName": {
             "Type": "String"
+        },
+        "authRoleName": {
+            "Type": "String"
+        },
+        "unauthRoleName": {
+            "Type": "String"
+        },
+        "rolePermissions": {
+            "Type": "String"
+        },
+        "policyName": {
+            "Type": "String"
         }
     },
     "Conditions": {
@@ -94,6 +106,46 @@
                     ]
                 }
                 
+            }
+        },
+        "DynamoDBTableAccessPolicy": {
+            "DependsOn": [
+                "DynamoDBTable"
+            ],
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": {
+                    "Ref": "policyName"
+                },
+                "Roles": [
+                    {
+                        "Ref": "authRoleName"
+                    },
+                    {
+                        "Ref": "unauthRoleName"
+                    }
+                ],
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action": {
+                                "Fn::Split": [ ",", {
+                                    "Ref": "rolePermissions"
+                                }]
+                            },
+                            "Resource": [
+                                {
+                                    "Fn::GetAtt": [
+                                        "DynamoDBTable",
+                                        "Arn"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
             }
         }
     },

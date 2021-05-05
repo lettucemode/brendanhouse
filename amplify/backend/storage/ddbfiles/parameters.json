@@ -3,5 +3,13 @@
     "partitionKeyName": "name",
     "partitionKeyType": "S",
     "sortKeyName": "s3key",
-    "sortKeyType": "S"
+    "sortKeyType": "S",
+    "authRoleName": {
+        "Ref": "AuthRoleName"
+    },
+    "unauthRoleName": {
+        "Ref": "UnauthRoleName"
+    },
+    "rolePermissions": "dynamodb:PutItem,dynamodb:GetItem",
+    "policyName": "dynamodb_policy_1baaf7b0"
 }

@@ -22,18 +22,18 @@ function Docs() {
         onClick={async () => {
           let stuff = await Auth.currentCredentials();
           const ddb = new DynamoDBClient({
-            region: awsmobile.aws_project_region,
+            region: awsmobile.aws_dynamodb_all_tables_region,
             credentials: new Credentials(stuff.accessKeyId, stuff.secretAccessKey, stuff.sessionToken),
           });
           const params = {
-            TableName: 'files',
+            TableName: 'files-prod',
             Item: {
               name: { S: 'TEST_FILE.doc' },
               s3key: { S: 'public/TEST_FILE.doc' },
             },
           };
           const data = await ddb.send(new PutItemCommand(params));
-          console.log(data);
+          console.log(data.Attributes);
         }}
       >
         Put Item
@@ -45,19 +45,19 @@ function Docs() {
           let stuff = await Auth.currentCredentials();
           console.log(stuff);
           const ddb = new DynamoDBClient({
-            region: awsmobile.aws_project_region,
+            region: awsmobile.aws_dynamodb_all_tables_region,
             credentials: new Credentials(stuff.accessKeyId, stuff.secretAccessKey, stuff.sessionToken),
           });
           const params = {
-            TableName: 'files',
+            TableName: 'files-prod',
             Key: {
-              name: { S: 'TEST_FILE.doc' },
+              name: { S: 'TEST_FILE2.doc' },
               s3key: { S: 'public/TEST_FILE.doc' },
             },
-            ProjectionExpression: 'ATTRIBUTE_NAME',
+            // ProjectionExpression: 'ATTRIBUTE_NAME',
           };
           const data = await ddb.send(new GetItemCommand(params));
-          console.log(data);
+          console.log(data.Item);
         }}
       >
         Get Item
