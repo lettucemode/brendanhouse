@@ -10,15 +10,13 @@
         },
         "env": {
             "Type": "String"
-        },
-        
+        },        
         "sortKeyName": {
             "Type": "String"
         },
         "sortKeyType": {
             "Type": "String"
         },
-        
         "tableName": {
             "Type": "String"
         },
@@ -28,10 +26,16 @@
         "unauthRoleName": {
             "Type": "String"
         },
-        "rolePermissions": {
+        "authRolePermissions": {
             "Type": "String"
         },
-        "policyName": {
+        "unauthRolePermissions": {
+            "Type": "String"
+        },
+        "authPolicyName": {
+            "Type": "String"
+        },
+        "unauthPolicyName": {
             "Type": "String"
         }
     },
@@ -108,19 +112,53 @@
                 
             }
         },
-        "DynamoDBTableAccessPolicy": {
+        "DynamoDBTableAuthAccessPolicy": {
             "DependsOn": [
                 "DynamoDBTable"
             ],
             "Type": "AWS::IAM::Policy",
             "Properties": {
                 "PolicyName": {
-                    "Ref": "policyName"
+                    "Ref": "authPolicyName"
                 },
                 "Roles": [
                     {
                         "Ref": "authRoleName"
-                    },
+                    }
+                ],
+                "PolicyDocument": {
+                    "Version": "2012-10-17",
+                    "Statement": [
+                        {
+                            "Effect": "Allow",
+                            "Action": {
+                                "Fn::Split": [ ",", {
+                                    "Ref": "authRolePermissions"
+                                }]
+                            },
+                            "Resource": [
+                                {
+                                    "Fn::GetAtt": [
+                                        "DynamoDBTable",
+                                        "Arn"
+                                    ]
+                                }
+                            ]
+                        }
+                    ]
+                }
+            }
+        },
+        "DynamoDBTableUnauthAccessPolicy": {
+            "DependsOn": [
+                "DynamoDBTable"
+            ],
+            "Type": "AWS::IAM::Policy",
+            "Properties": {
+                "PolicyName": {
+                    "Ref": "unauthPolicyName"
+                },
+                "Roles": [
                     {
                         "Ref": "unauthRoleName"
                     }
@@ -132,7 +170,7 @@
                             "Effect": "Allow",
                             "Action": {
                                 "Fn::Split": [ ",", {
-                                    "Ref": "rolePermissions"
+                                    "Ref": "unauthRolePermissions"
                                 }]
                             },
                             "Resource": [

@@ -16,11 +16,14 @@ function Docs() {
 
   const [files, setFiles] = useState<FileRecord[]>([]);
 
-  async function loadPublicFiles() {
+  const loadPublicFiles = async () => {
     await fileService.init();
     const data: FileRecord[] = await fileService.listPublicFiles();
+    for (const rec of data) {
+      rec.signedUrl = await fileService.getFileUrl(rec.s3key);
+    }
     setFiles(data);
-  }
+  };
 
   useEffect(() => {
     loadPublicFiles();
@@ -52,11 +55,32 @@ function Docs() {
             <tr>
               <th>Name</th>
               <th>S3 Key</th>
+              <th>Download Link</th>
+              {user && <th>Delete</th>}
             </tr>
             {files.map((f: FileRecord) => (
               <tr>
                 <td>{f.name}</td>
                 <td>{f.s3key}</td>
+                <td>
+                  <a href={f.signedUrl} target="_blank" rel="noreferrer">
+                    {f.name}
+                  </a>
+                </td>
+                {user && (
+                  <td>
+                    <Button
+                      variant="danger"
+                      onClick={async () => {
+                        await fileService.init();
+                        await fileService.removeFile(f);
+                        setFiles(files.filter((fi) => fi !== f));
+                      }}
+                    >
+                      Delete
+                    </Button>
+                  </td>
+                )}
               </tr>
             ))}
           </thead>
