@@ -4,6 +4,7 @@ import { Switch, Route } from 'react-router-dom';
 import Docs from './components/Docs';
 import Header from './components/Header';
 import Footer from './components/Footer';
+import { AuthComponent } from './components/AuthComponent';
 
 function App() {
   return (
