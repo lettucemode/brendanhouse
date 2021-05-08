@@ -1,4 +1,28 @@
-# Getting Started with Create React App
+# Brendan House
+
+Source code and AWS infrastructure for https://www.brendanhouse.com.
+
+## Goals and Design Rationale
+
+After some discussion, we landed on the following primary goals for the site:
+
+- Minimum cost possible
+- Custom domain
+- Generally a simple, blog/informational site
+- Some custom functionality
+  - create events that visitors can sign up for
+  - allow download/upload of documents for Vessels of Honor program
+  - accept payments for Vessels of Honor program
+
+To meet these, I decided to build out a custom site from scratch. There are several popular WYSIWYG tools out there for creating one's own site (Wordpress, Wix, Squarespace, etc.) which have good free or low-cost plans. However, they get more costly when you need a custom domain, custom functionality via plugins, or need to process payments.
+
+## Technology stack
+
+I settled on [Amazon Web Services](https://aws.amazon.com/) for the hosting provider. Other options I considered included Netlify, Azure, Vercel, and GCP. AWS has a solid, year-long free tier and plenty of documentation for the site's use cases. I also had some prior experience with it from my day job and was interested in improving my skills with it.
+
+The infrastructure is currently deployed and hosted through [AWS Amplify](https://aws.amazon.com/amplify/), a suite of tools and services AWS provides for quickly getting a site up and running. At some point I will probably want to ditch these tools and do everything myself. They are very useful and the tooling is pretty impressive, but 1) they are overkill for the site's needs in some areas, and 2) they obscure things about how AWS actually works that I would rather not have hidden from me long-term.
+
+The site itself is CRA blah blah.
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
 
