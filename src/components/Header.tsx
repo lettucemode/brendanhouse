@@ -5,44 +5,54 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
+  let title = 'Brendan House';
+  let location = useLocation();
+  if (location.pathname !== '/') {
+    title += ' - ';
+    if (location.pathname.startsWith('/prayer')) {
+      title += 'Prayer & Worship';
+    } else if (location.pathname.startsWith('/training')) {
+      title += 'Training';
+    } else if (location.pathname.startsWith('/vessels-of-honor')) {
+      title += 'Vessels of Honor';
+    } else if (location.pathname.startsWith('/community')) {
+      title += 'Affectionate Community';
+    } else if (location.pathname.startsWith('/creativity')) {
+      title += 'Thoughtful Creative Expression';
+    }
+  }
+
   return (
     <Container fluid>
-      <Navbar bg="light" expand="md">
-        <Navbar.Brand as={Link} to="/">
-          Brendan House
-        </Navbar.Brand>
+      <Navbar collapseOnSelect expand="md" className="testing">
+        <Navbar.Brand className="col-7">{title}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="/">
               Home
             </Nav.Link>
-            <Nav.Link as={Link} to="/docs/4">
-              Documents
-            </Nav.Link>
-            <NavDropdown title="Dropdown" id="basic-nav-dropdown">
-              <NavDropdown.Item as={Link} to="#action/3.1">
-                Action
+            <NavDropdown title="Pages" id="basic-nav-dropdown">
+              <NavDropdown.Item as={Link} to="prayer">
+                Prayer
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="#action/3.2">
-                Another action
+              <NavDropdown.Item as={Link} to="training">
+                Training
               </NavDropdown.Item>
-              <NavDropdown.Item as={Link} to="#action/3.3">
-                Something
+              <NavDropdown.Item as={Link} to="vessels-of-honor">
+                Vessels of Honor
               </NavDropdown.Item>
-              <NavDropdown.Divider />
-              <NavDropdown.Item as={Link} to="#action/3.4">
-                Separated link
+              <NavDropdown.Item as={Link} to="community">
+                Community
+              </NavDropdown.Item>
+              <NavDropdown.Item as={Link} to="creativity">
+                Creativity
               </NavDropdown.Item>
             </NavDropdown>
           </Nav>
-          <Form inline>
-            <FormControl type="text" placeholder="Search" className="mr-sm-2" />
-            <Button variant="outline-success">Search</Button>
-          </Form>
         </Navbar.Collapse>
       </Navbar>
     </Container>

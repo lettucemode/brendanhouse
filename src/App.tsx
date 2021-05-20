@@ -6,6 +6,8 @@ import Header from './components/Header';
 import Footer from './components/Footer';
 import { AuthComponent } from './components/AuthComponent';
 
+import big_image from './img/Saint_brendan_german_manuscript.jpg';
+
 function App() {
   return (
     <>
@@ -17,7 +19,7 @@ function App() {
         <Route path="/">
           <Jumbotron>
             <h1>Brendan House</h1>
-            <Image rounded src="Saint_brendan_german_manuscript.jpg" className="d-block mx-auto" />
+            <Image rounded src={big_image} className="d-block mx-auto" />
             <span className="text-muted float-right">Hi Joanne</span>
           </Jumbotron>
           {/* <Link to="/docs/42">Forty two</Link>
