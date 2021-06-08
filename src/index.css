@@ -11,5 +11,21 @@ code {
 }
 
 .testing {
-  /* background-image: url('img/Saint_brendan_german_manuscript.jpg'); */
+  background-image: url('img/brendanhouse-header.png');
+  background-position: center 75%;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-height: 5rem;
+}
+
+.navbar-custom {
+  margin-top: -2.5rem;
+}
+
+.construction {
+  background-color: rgb(255, 255, 88);
+  text-align: center;
+  color: gray;
+  font-family: 'Courier New', Courier, monospace;
+  letter-spacing: 0.5em;
 }

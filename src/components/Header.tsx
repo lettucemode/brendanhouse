@@ -5,6 +5,7 @@ import Form from 'react-bootstrap/Form';
 import FormControl from 'react-bootstrap/FormControl';
 import Button from 'react-bootstrap/Button';
 import Container from 'react-bootstrap/Container';
+import Alert from 'react-bootstrap/Alert';
 import { Link, useLocation } from 'react-router-dom';
 
 function Header() {
@@ -28,9 +29,9 @@ function Header() {
   return (
     <Container fluid>
       <Navbar collapseOnSelect expand="md" className="testing">
-        <Navbar.Brand className="col-7">{title}</Navbar.Brand>
+        <Navbar.Brand className="navbar-custom">{title}</Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
-        <Navbar.Collapse id="basic-navbar-nav">
+        <Navbar.Collapse id="basic-navbar-nav" className="navbar-custom">
           <Nav className="mr-auto">
             <Nav.Link as={Link} to="/">
               Home
@@ -55,6 +56,7 @@ function Header() {
           </Nav>
         </Navbar.Collapse>
       </Navbar>
+      <div className="construction">UNDER CONSTRUCTION</div>
     </Container>
   );
 }
