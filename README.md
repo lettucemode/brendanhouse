@@ -30,4 +30,4 @@ The site itself was bootstrapped with [CRA](https://github.com/facebook/create-r
 
 You'll need to install and configure [Amplify CLI](https://docs.amplify.aws/cli) to pull down all the backend config so the frontend can connect and talk to the infrastructure. Contact me (lettucemode) for access to the AWS account.
 
-To deploy, push to `main` and wait for CI/CD to finish.
+To deploy, push or merge to `main` to trigger CI/CD.
