@@ -7,24 +7,35 @@ import Footer from './components/Footer';
 import { AuthComponent } from './components/AuthComponent';
 
 import big_image from './img/Saint_brendan_german_manuscript.jpg';
+import Home from './components/pages/Home';
+import VesselsOfHonor from './components/pages/VesselsOfHonor';
+import Training from './components/pages/Training';
+import Prayer from './components/pages/Prayer';
+import Community from './components/pages/Community';
+import Creativity from './components/pages/Creativity';
 
 function App() {
   return (
     <>
       <Header />
       <Switch>
-        <Route path="/docs/:id">
-          <Docs />
+        <Route path="/prayer">
+          <Prayer />
+        </Route>
+        <Route path="/training">
+          <Training />
+        </Route>
+        <Route path="/vessels-of-honor">
+          <VesselsOfHonor />
+        </Route>
+        <Route path="/community">
+          <Community />
+        </Route>
+        <Route path="/creativity">
+          <Creativity />
         </Route>
         <Route path="/">
-          <Jumbotron>
-            <h1>Brendan House</h1>
-            <Image rounded src={big_image} className="d-block mx-auto" />
-            <span className="text-muted float-right">Hi Joanne</span>
-          </Jumbotron>
-          {/* <Link to="/docs/42">Forty two</Link>
-          <Link to="/docs/5">Five</Link>
-          <Link to="/docs/3">Three</Link> */}
+          <Home />
         </Route>
       </Switch>
       <Footer />
