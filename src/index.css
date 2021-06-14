@@ -29,3 +29,10 @@ code {
   font-family: 'Courier New', Courier, monospace;
   letter-spacing: 0.5em;
 }
+
+.why-sidebar {
+  background-color: lightyellow;
+  text-align: center;
+  margin: 15px;
+  border-style: solid;
+}
