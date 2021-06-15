@@ -6,7 +6,6 @@ import {
   PutItemCommand,
   ScanCommand,
   DeleteItemCommand,
-  PutItemCommandOutput,
   DeleteItemCommandOutput,
 } from '@aws-sdk/client-dynamodb';
 import { Credentials } from '@aws-sdk/types';

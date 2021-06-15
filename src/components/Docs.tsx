@@ -1,6 +1,5 @@
 import Button from 'react-bootstrap/Button';
 import Form from 'react-bootstrap/Form';
-import { Link, useParams } from 'react-router-dom';
 import { FileService } from '../services/file';
 import { useUser } from '../util/auth';
 import { useEffect, useState } from 'react';
@@ -10,7 +9,6 @@ import { AuthComponent } from './AuthComponent';
 import Table from 'react-bootstrap/Table';
 
 function Docs() {
-  let { id } = useParams() as any;
   let { user } = useUser();
   let fileService = new FileService();
 
@@ -39,8 +37,6 @@ function Docs() {
 
   return (
     <div>
-      <h3>ID: {id}</h3>
-      <Link to="/">Back home</Link>
       <AuthComponent />
       {user && (
         <Container>

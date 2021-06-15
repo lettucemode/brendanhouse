@@ -1,12 +1,8 @@
-import Image from 'react-bootstrap/Image';
-import Jumbotron from 'react-bootstrap/Jumbotron';
 import { Switch, Route } from 'react-router-dom';
 import Docs from './components/Docs';
 import Header from './components/Header';
 import Footer from './components/Footer';
-import { AuthComponent } from './components/AuthComponent';
 
-import big_image from './img/Saint_brendan_german_manuscript.jpg';
 import Home from './components/pages/Home';
 import VesselsOfHonor from './components/pages/VesselsOfHonor';
 import Training from './components/pages/Training';
@@ -19,6 +15,9 @@ function App() {
     <>
       <Header />
       <Switch>
+        <Route path="/docs">
+          <Docs />
+        </Route>
         <Route path="/prayer">
           <Prayer />
         </Route>

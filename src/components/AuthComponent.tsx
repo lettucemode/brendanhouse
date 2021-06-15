@@ -13,6 +13,13 @@ export function AuthComponent() {
   const [newPassword, setNewPassword] = useState('');
   const [email, setEmail] = useState('');
 
+  const doLogin = () => {
+    login(username, password).then(() => {
+      setUsername('');
+      setPassword('');
+    });
+  };
+
   // signed in, but this is the first time and a pw update/email is needed
   if (user && user.challengeName === 'NEW_PASSWORD_REQUIRED') {
     return (
@@ -67,18 +74,21 @@ export function AuthComponent() {
           </Form.Group>
           <Form.Group as={Col} xl={6} controlId="formPassword" className="align-self-center">
             <Form.Label>Password</Form.Label>
-            <Form.Control type="password" value={password} onChange={(e) => setPassword(e.target.value)} />
+            <Form.Control
+              type="password"
+              value={password}
+              onChange={(e) => setPassword(e.target.value)}
+              onKeyPress={(e) => {
+                if (e.key === 'Enter') {
+                  doLogin();
+                }
+              }}
+            />
           </Form.Group>
         </Form.Row>
         <Form.Row className="justify-content-center">
           <Col className="col-md-auto">
-            <Button
-              variant="primary"
-              type="button"
-              onClick={() => {
-                login(username, password);
-              }}
-            >
+            <Button variant="primary" type="button" onClick={doLogin}>
               Sign in
             </Button>
           </Col>
