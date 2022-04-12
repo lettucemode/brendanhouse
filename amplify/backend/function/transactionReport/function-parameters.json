@@ -1,0 +1,8 @@
+{
+  "lambdaLayers": [],
+  "secretNames": [
+    "SQUARE_ACCESS_TOKEN",
+    "EMAIL_TO"
+  ],
+  "environmentVariableList": []
+}

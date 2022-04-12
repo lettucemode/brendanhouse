@@ -1,0 +1,8 @@
+{
+  "lambdaLayers": [],
+  "secretNames": [
+    "COHORT_1_PASSWORD",
+    "COHORT_2_PASSWORD"
+  ],
+  "environmentVariableList": []
+}
