@@ -1,0 +1,149 @@
+{
+    "paths": [
+        {
+            "name": "/square",
+            "lambdaFunction": "squarelambda",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/square"
+        },
+        {
+            "name": "/email",
+            "lambdaFunction": "emaillambda",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/email"
+        },
+        {
+            "name": "/docs",
+            "lambdaFunction": "docs",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/docs"
+        },
+        {
+            "name": "/contact",
+            "lambdaFunction": "contact",
+            "privacy": {
+                "protected": true,
+                "auth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ],
+                "unauth": [
+                    "/POST",
+                    "/GET",
+                    "/PUT",
+                    "/PATCH",
+                    "/DELETE"
+                ]
+            },
+            "policyResourceName": "/contact"
+        }
+    ],
+    "resourceName": "bhrestapi",
+    "apiName": "bhrestapi",
+    "functionArns": [
+        {
+            "lambdaFunction": "squarelambda"
+        },
+        {
+            "lambdaFunction": "emaillambda"
+        },
+        {
+            "lambdaFunction": "docs"
+        },
+        {
+            "lambdaFunction": "contact"
+        }
+    ],
+    "privacy": {
+        "auth": 4,
+        "unauth": 4,
+        "authRoleName": "amplify-brendanhouse-prod-193950-authRole",
+        "unAuthRoleName": "amplify-brendanhouse-prod-193950-unauthRole"
+    },
+    "dependsOn": [
+        {
+            "category": "function",
+            "resourceName": "squarelambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "emaillambda",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "docs",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        },
+        {
+            "category": "function",
+            "resourceName": "contact",
+            "attributes": [
+                "Name",
+                "Arn"
+            ]
+        }
+    ],
+    "uuid": "424b2ed9"
+}
