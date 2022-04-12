@@ -31,7 +31,7 @@ Some things require manual setup still, due to Amplify support:
 
 ## Working with the code
 
-`yarn start` to run locally.
+`npm start` to run locally.
 
 Amplify works by configuring a webhook & deploy keys on your repo. See [here](https://docs.aws.amazon.com/amplify/latest/userguide/getting-started.html) for more information on setting that up.
 
