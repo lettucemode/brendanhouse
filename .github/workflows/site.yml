@@ -2,19 +2,21 @@ name: main site CI verification
 
 on:
   pull_request:
-    branches: [ main ]
+    branches: [main]
 
 jobs:
   build:
-
     runs-on: ubuntu-latest
 
     steps:
-    - uses: actions/checkout@v3
-    - name: Use Node.js 16.x
-      uses: actions/setup-node@v3
-      with:
-        node-version: 16.x
-        cache: 'yarn'
-    - run: yarn install
-    - run: yarn build
+      - uses: actions/checkout@v3
+      - name: Use Node.js 16.x
+        uses: actions/setup-node@v3
+        with:
+          node-version: 16.x
+          cache: "yarn"
+      - run: yarn install
+      - name: create dummy aws-exports.js if not present
+        if: hashFiles('src/aws-exports.js') == ''
+        run: echo "const awsmobile = {}; export default awsmobile;" > src/aws-exports.js
+      - run: yarn build
