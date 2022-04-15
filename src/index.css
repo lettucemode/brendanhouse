@@ -1,0 +1,117 @@
+body {
+  margin: 0;
+  font-family: 'Quicksand';
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+code {
+  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+}
+
+.bh-navbar {
+  min-height: 6rem;
+  background: linear-gradient(0deg, white, rgb(195, 228, 242));
+  z-index: 900;
+}
+
+.bh-navbar::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.8;
+  background-image: url('./img/water\ splash.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: auto;
+  z-index: -1000;
+}
+
+.navbar-title {
+  font-family: 'HomemadeApple';
+  font-size: 2.5rem;
+}
+
+.navbar-headings {
+  font-family: 'Now';
+}
+
+.bh-footer {
+  background: linear-gradient(white, rgb(195, 228, 242));
+}
+
+.text-bold {
+  font-weight: bold;
+}
+
+.contact-container {
+  background: radial-gradient(rgb(195, 228, 242), white 70%);
+}
+
+.payment-background {
+  background: radial-gradient(rgb(195, 228, 242), white 75%);
+}
+
+.sidebar {
+  background-color: rgb(195, 228, 242);
+  margin: 15px;
+  border-style: solid;
+}
+
+.sidebar-heading {
+  font-family: 'Now';
+  font-weight: bold;
+  text-decoration-line: 'underline';
+  text-align: center;
+  margin-top: 10px;
+  margin-bottom: 10px;
+}
+
+.sidebar-text {
+  font-family: 'Quicksand';
+}
+
+.voh-background::before {
+  content: '';
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.4;
+  background-image: url('./img/Pots.png');
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: 120%;
+  z-index: -1000;
+}
+
+@font-face {
+  font-family: 'HomemadeApple';
+  src: url(./fonts/HomemadeApple-Regular.eot);
+  src: url(./fonts/HomemadeApple-Regular.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/HomemadeApple-Regular.ttf) format('truetype'), url(./fonts/HomemadeApple-Regular.woff) format('woff'),
+    url(./fonts/HomemadeApple-Regular.woff2) format('woff2'),
+    url(./fonts/HomemadeApple-Regular.svg#HomemadeApple) format('svg');
+}
+
+@font-face {
+  font-family: 'Now';
+  src: url(./fonts/Now-Regular.eot);
+  src: url(./fonts/Now-Regular.eot?#iefix) format('embedded-opentype'), url(./fonts/Now-Regular.ttf) format('truetype'),
+    url(./fonts/Now-Regular.woff) format('woff'), url(./fonts/Now-Regular.woff2) format('woff2'),
+    url(./fonts/Now-Regular.svg#Now) format('svg');
+}
+
+@font-face {
+  font-family: 'Quicksand';
+  src: url(./fonts/Quicksand-Regular.eot);
+  src: url(./fonts/Quicksand-Regular.eot?#iefix) format('embedded-opentype'),
+    url(./fonts/Quicksand-Regular.ttf) format('truetype'), url(./fonts/Quicksand-Regular.woff) format('woff'),
+    url(./fonts/Quicksand-Regular.woff2) format('woff2'), url(./fonts/Quicksand-Regular.svg#Quicksand) format('svg');
+}

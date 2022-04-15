@@ -1,0 +1,82 @@
+{
+  "prod": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-brendanhouse-prod-193950-authRole",
+      "UnauthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-prod-193950-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-prod-193950-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
+      "UnauthRoleName": "amplify-brendanhouse-prod-193950-unauthRole",
+      "StackName": "amplify-brendanhouse-prod-193950",
+      "StackId": "arn:aws:cloudformation:us-east-2:782809024315:stack/amplify-brendanhouse-prod-193950/61dd0110-a09f-11eb-a7b7-06eabac67bae",
+      "AmplifyAppId": "d3iscs5oi8hzql"
+    },
+    "categories": {
+      "auth": {
+        "brendanhousef32a71c5": {}
+      },
+      "function": {
+        "squarelambda": {
+          "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
+          "s3Key": "amplify-builds/squarelambda-3178614b754a4d764e4c-build.zip"
+        },
+        "emaillambda": {
+          "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
+          "s3Key": "amplify-builds/emaillambda-7942303838756e30716e-build.zip"
+        },
+        "docs": {
+          "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
+          "s3Key": "amplify-builds/docs-41335970754d4d4a4a36-build.zip"
+        },
+        "contact": {
+          "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
+          "s3Key": "amplify-builds/contact-346f352f61674279544c-build.zip"
+        },
+        "transactionReport": {
+          "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
+          "s3Key": "amplify-builds/transactionReport-6c535661747631504b36-build.zip"
+        }
+      }
+    }
+  },
+  "dev": {
+    "awscloudformation": {
+      "AuthRoleName": "amplify-brendanhouse-dev-115720-authRole",
+      "UnauthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-dev-115720-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-dev-115720-authRole",
+      "Region": "us-east-2",
+      "DeploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
+      "UnauthRoleName": "amplify-brendanhouse-dev-115720-unauthRole",
+      "StackName": "amplify-brendanhouse-dev-115720",
+      "StackId": "arn:aws:cloudformation:us-east-2:782809024315:stack/amplify-brendanhouse-dev-115720/8484d060-e197-11eb-bf3f-06bce821a7be",
+      "AmplifyAppId": "d3iscs5oi8hzql"
+    },
+    "categories": {
+      "auth": {
+        "brendanhousef32a71c5": {}
+      },
+      "function": {
+        "squarelambda": {
+          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
+          "s3Key": "amplify-builds/squarelambda-717971504d7656796d61-build.zip"
+        },
+        "emaillambda": {
+          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
+          "s3Key": "amplify-builds/emaillambda-4b4d574d44436c344834-build.zip"
+        },
+        "docs": {
+          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
+          "s3Key": "amplify-builds/docs-5a3861676d7052463467-build.zip"
+        },
+        "contact": {
+          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
+          "s3Key": "amplify-builds/contact-6e58574a594d4c534b56-build.zip"
+        },
+        "transactionReport": {
+          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
+          "s3Key": "amplify-builds/transactionReport-57734e36463966653678-build.zip"
+        }
+      }
+    }
+  }
+}
