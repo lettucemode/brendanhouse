@@ -9,7 +9,8 @@
       "UnauthRoleName": "amplify-brendanhouse-prod-193950-unauthRole",
       "StackName": "amplify-brendanhouse-prod-193950",
       "StackId": "arn:aws:cloudformation:us-east-2:782809024315:stack/amplify-brendanhouse-prod-193950/61dd0110-a09f-11eb-a7b7-06eabac67bae",
-      "AmplifyAppId": "d3iscs5oi8hzql"
+      "AmplifyAppId": "d3iscs5oi8hzql",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-brendanhouse-prod-193950-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
@@ -18,23 +19,27 @@
       "function": {
         "squarelambda": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/squarelambda-3178614b754a4d764e4c-build.zip"
+          "s3Key": "amplify-builds/squarelambda-4149587a467036493543-build.zip",
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         },
         "emaillambda": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/emaillambda-7942303838756e30716e-build.zip"
+          "s3Key": "amplify-builds/emaillambda-45316c2f5452576c462f-build.zip"
         },
         "docs": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/docs-41335970754d4d4a4a36-build.zip"
+          "s3Key": "amplify-builds/docs-747667716e3156526951-build.zip",
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         },
         "contact": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/contact-346f352f61674279544c-build.zip"
+          "s3Key": "amplify-builds/contact-484948452f2b54586d4f-build.zip",
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         },
         "transactionReport": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/transactionReport-6c535661747631504b36-build.zip"
+          "s3Key": "amplify-builds/transactionReport-522b786534545748414f-build.zip",
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         }
       }
     }
