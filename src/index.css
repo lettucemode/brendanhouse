@@ -1,12 +1,12 @@
 body {
   margin: 0;
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
 
 code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New', monospace;
+  font-family: source-code-pro, Menlo, Monaco, Consolas, "Courier New", monospace;
 }
 
 .bh-navbar {
@@ -16,7 +16,7 @@ code {
 }
 
 .bh-navbar::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 0;
@@ -24,7 +24,7 @@ code {
   width: 100%;
   height: 100%;
   opacity: 0.8;
-  background-image: url('./img/water\ splash.png');
+  background-image: url("./img/water\ splash.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;
@@ -32,12 +32,12 @@ code {
 }
 
 .navbar-title {
-  font-family: 'HomemadeApple';
+  font-family: "HomemadeApple";
   font-size: 2.5rem;
 }
 
 .navbar-headings {
-  font-family: 'Now';
+  font-family: "Now";
 }
 
 .bh-footer {
@@ -63,20 +63,20 @@ code {
 }
 
 .sidebar-heading {
-  font-family: 'Now';
+  font-family: "Now";
   font-weight: bold;
-  text-decoration-line: 'underline';
+  text-decoration-line: "underline";
   text-align: center;
   margin-top: 10px;
   margin-bottom: 10px;
 }
 
 .sidebar-text {
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
 }
 
 .voh-background::before {
-  content: '';
+  content: "";
   display: block;
   position: absolute;
   left: 0;
@@ -84,34 +84,42 @@ code {
   width: 100%;
   height: 100%;
   opacity: 0.4;
-  background-image: url('./img/Pots.png');
+  background-image: url("./img/Pots.png");
   background-position: center;
   background-repeat: no-repeat;
   background-size: 120%;
   z-index: -1000;
 }
 
+.jarsfloated {
+  float: right;
+  width: 330px;
+  margin-left: 22px;
+}
+
 @font-face {
-  font-family: 'HomemadeApple';
+  font-family: "HomemadeApple";
   src: url(./fonts/HomemadeApple-Regular.eot);
-  src: url(./fonts/HomemadeApple-Regular.eot?#iefix) format('embedded-opentype'),
-    url(./fonts/HomemadeApple-Regular.ttf) format('truetype'), url(./fonts/HomemadeApple-Regular.woff) format('woff'),
-    url(./fonts/HomemadeApple-Regular.woff2) format('woff2'),
-    url(./fonts/HomemadeApple-Regular.svg#HomemadeApple) format('svg');
+  src: url(./fonts/HomemadeApple-Regular.eot?#iefix) format("embedded-opentype"),
+    url(./fonts/HomemadeApple-Regular.ttf) format("truetype"),
+    url(./fonts/HomemadeApple-Regular.woff) format("woff"),
+    url(./fonts/HomemadeApple-Regular.woff2) format("woff2"),
+    url(./fonts/HomemadeApple-Regular.svg#HomemadeApple) format("svg");
 }
 
 @font-face {
-  font-family: 'Now';
+  font-family: "Now";
   src: url(./fonts/Now-Regular.eot);
-  src: url(./fonts/Now-Regular.eot?#iefix) format('embedded-opentype'), url(./fonts/Now-Regular.ttf) format('truetype'),
-    url(./fonts/Now-Regular.woff) format('woff'), url(./fonts/Now-Regular.woff2) format('woff2'),
-    url(./fonts/Now-Regular.svg#Now) format('svg');
+  src: url(./fonts/Now-Regular.eot?#iefix) format("embedded-opentype"),
+    url(./fonts/Now-Regular.ttf) format("truetype"), url(./fonts/Now-Regular.woff) format("woff"),
+    url(./fonts/Now-Regular.woff2) format("woff2"), url(./fonts/Now-Regular.svg#Now) format("svg");
 }
 
 @font-face {
-  font-family: 'Quicksand';
+  font-family: "Quicksand";
   src: url(./fonts/Quicksand-Regular.eot);
-  src: url(./fonts/Quicksand-Regular.eot?#iefix) format('embedded-opentype'),
-    url(./fonts/Quicksand-Regular.ttf) format('truetype'), url(./fonts/Quicksand-Regular.woff) format('woff'),
-    url(./fonts/Quicksand-Regular.woff2) format('woff2'), url(./fonts/Quicksand-Regular.svg#Quicksand) format('svg');
+  src: url(./fonts/Quicksand-Regular.eot?#iefix) format("embedded-opentype"),
+    url(./fonts/Quicksand-Regular.ttf) format("truetype"), url(./fonts/Quicksand-Regular.woff) format("woff"),
+    url(./fonts/Quicksand-Regular.woff2) format("woff2"),
+    url(./fonts/Quicksand-Regular.svg#Quicksand) format("svg");
 }
