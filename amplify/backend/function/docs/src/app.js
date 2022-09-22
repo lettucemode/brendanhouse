@@ -1,3 +1,17 @@
+/*
+Use the following code to retrieve configured secrets from SSM:
+
+const aws = require('aws-sdk');
+
+const { Parameters } = await (new aws.SSM())
+  .getParameters({
+    Names: ["COHORT_1_PASSWORD","COHORT_2_PASSWORD"].map(secretName => process.env[secretName]),
+    WithDecryption: true,
+  })
+  .promise();
+
+Parameters will be of the form { Name: 'secretName', Value: 'secretValue', ... }[]
+*/
 const express = require('express')
 const aws = require("aws-sdk");
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')

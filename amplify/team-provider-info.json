@@ -24,7 +24,8 @@
         },
         "emaillambda": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/emaillambda-45316c2f5452576c462f-build.zip"
+          "s3Key": "amplify-builds/emaillambda-45316c2f5452576c462f-build.zip",
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         },
         "docs": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
