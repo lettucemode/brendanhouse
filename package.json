@@ -10,7 +10,7 @@
     "react-bootstrap": "^1.5.2",
     "react-dom": "^18.0.0",
     "react-keyed-file-browser": "^1.11.0",
-    "react-router": "^5.2.0",
+    "react-router": "^6.5.0",
     "react-router-dom": "^5.2.0",
     "react-scripts": "4.0.3",
     "web-vitals": "^2.1.4"
