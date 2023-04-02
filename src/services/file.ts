@@ -1,7 +1,7 @@
-import { Storage } from 'aws-amplify';
+import { Storage } from "aws-amplify";
 
 export interface S3File {
-  s3Obj?: S3Object;
+  s3Obj?: any;
   level?: string;
   signedUrl?: string;
 }
@@ -17,55 +17,81 @@ export interface S3Key {
 }
 
 export class FileService {
-  TableName: string = 'files-prod';
-  PublicPrefix: string = 'public/';
-  ProectedPrefix: string = 'protected/';
-  UploadsPrefix: string = 'uploads/';
+  TableName: string = "files-prod";
+  PublicPrefix: string = "public/";
+  ProectedPrefix: string = "protected/";
+  UploadsPrefix: string = "uploads/";
 
   async listV1UploadFiles(cohort: number): Promise<S3File[]> {
-    const config = { level: 'public', customPrefix: { public: this.UploadsPrefix } };
-    const data = await Storage.list(`v1/Cohort ${cohort}/`, config);
+    const data = await Storage.list(`v1/Cohort ${cohort}/`, {
+      level: "public",
+      customPrefix: {
+        public: this.UploadsPrefix,
+      },
+    });
     return Promise.all(
-      data.map(async (d: S3Object) => {
-        d.key = d.key.substr(3);
-        return { s3Obj: d, level: 'public', signedUrl: await Storage.get('v1/' + d.key, config) } as S3File;
+      data.results.map(async (value) => {
+        value.key = value.key.substr(3);
+        return {
+          s3Obj: value,
+          level: "public",
+          signedUrl: await Storage.get("v1/" + value.key, {
+            level: "public",
+            customPrefix: {
+              public: this.UploadsPrefix,
+            },
+          }),
+        } as S3File;
       })
     );
   }
 
   async listUserFiles(): Promise<S3File[]> {
-    const config = { level: 'protected' };
-    const data = await Storage.list('', config);
+    const data = await Storage.list("", {
+      level: "protected",
+    });
     return Promise.all(
-      data.map(async (d: S3Object) => {
-        return { s3Obj: d, level: 'protected', signedUrl: await Storage.get(d.key, config) } as S3File;
+      data.results.map(async (value) => {
+        return {
+          s3Obj: value,
+          level: "protected",
+          signedUrl: await Storage.get(value.key, { level: "protected" }),
+        } as S3File;
       })
     );
   }
 
   async listSiteFiles(): Promise<S3File[]> {
-    const config = { level: 'public' };
-    const data = await Storage.list('site/', config);
+    const data = await Storage.list("site/", {
+      level: "public",
+    });
     return Promise.all(
-      data.map(async (d: S3Object) => {
-        return { s3Obj: d, level: 'public', signedUrl: await Storage.get(d.key, config) } as S3File;
+      data.results.map(async (value) => {
+        return {
+          s3Obj: value,
+          level: "public",
+          signedUrl: await Storage.get(value.key, { level: "public" }),
+        } as S3File;
       })
     );
   }
 
   async saveV1UploadFile(key: string, file: File): Promise<S3Key> {
-    const val = await Storage.put('v1/' + key, file, { level: 'public', customPrefix: { public: this.UploadsPrefix } });
+    const val = await Storage.put("v1/" + key, file, {
+      level: "public",
+      customPrefix: { public: this.UploadsPrefix },
+    });
     return val as S3Key;
   }
 
   async saveUserFile(key: string, file: File): Promise<S3Key> {
-    const val = await Storage.put(key, file, { level: 'protected' });
+    const val = await Storage.put(key, file, { level: "protected" });
     return val as S3Key;
   }
 
   async deleteV1UploadFile(key: string): Promise<any> {
-    const data: any = await Storage.remove('v1/' + key, {
-      level: 'public',
+    const data: any = await Storage.remove("v1/" + key, {
+      level: "public",
       customPrefix: { public: this.UploadsPrefix },
     });
     return data;
