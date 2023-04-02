@@ -19,29 +19,32 @@
       "function": {
         "squarelambda": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/squarelambda-4149587a467036493543-build.zip",
+          "s3Key": "amplify-builds/squarelambda-416d54695144415a6431-build.zip",
           "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         },
         "emaillambda": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/emaillambda-45316c2f5452576c462f-build.zip",
+          "s3Key": "amplify-builds/emaillambda-3447316a6c426f667759-build.zip",
           "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         },
         "docs": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/docs-747667716e3156526951-build.zip",
+          "s3Key": "amplify-builds/docs-353638687566664d5636-build.zip",
           "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         },
         "contact": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/contact-484948452f2b54586d4f-build.zip",
+          "s3Key": "amplify-builds/contact-796a314e637074695730-build.zip",
           "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         },
         "transactionReport": {
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
-          "s3Key": "amplify-builds/transactionReport-522b786534545748414f-build.zip",
+          "s3Key": "amplify-builds/transactionReport-4e59376f354d71507842-build.zip",
           "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
         }
+      },
+      "storage": {
+        "brendanhousestorage": {}
       }
     }
   },

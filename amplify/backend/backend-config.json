@@ -1,87 +1,209 @@
 {
-  "auth": {
-    "brendanhousef32a71c5": {
-      "service": "Cognito",
-      "providerPlugin": "awscloudformation",
-      "dependsOn": [],
-      "customAuth": false
-    }
-  },
   "api": {
     "bhrestapi": {
-      "service": "API Gateway",
-      "providerPlugin": "awscloudformation",
       "dependsOn": [
         {
-          "category": "function",
-          "resourceName": "squarelambda",
           "attributes": [
             "Name",
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "squarelambda"
         },
         {
-          "category": "function",
-          "resourceName": "emaillambda",
           "attributes": [
             "Name",
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "emaillambda"
         },
         {
-          "category": "function",
-          "resourceName": "docs",
           "attributes": [
             "Name",
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "docs"
         },
         {
-          "category": "function",
-          "resourceName": "contact",
           "attributes": [
             "Name",
             "Arn"
-          ]
+          ],
+          "category": "function",
+          "resourceName": "contact"
+        }
+      ],
+      "providerPlugin": "awscloudformation",
+      "service": "API Gateway"
+    }
+  },
+  "auth": {
+    "brendanhousef32a71c5": {
+      "customAuth": false,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Cognito"
+    }
+  },
+  "function": {
+    "contact": {
+      "build": true,
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "docs": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "emaillambda": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "squarelambda": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    },
+    "transactionReport": {
+      "build": true,
+      "dependsOn": [],
+      "providerPlugin": "awscloudformation",
+      "service": "Lambda"
+    }
+  },
+  "parameters": {
+    "AMPLIFY_function_contact_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contact"
+        }
+      ]
+    },
+    "AMPLIFY_function_contact_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contact"
+        }
+      ]
+    },
+    "AMPLIFY_function_contact_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "contact"
+        }
+      ]
+    },
+    "AMPLIFY_function_docs_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "docs"
+        }
+      ]
+    },
+    "AMPLIFY_function_docs_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "docs"
+        }
+      ]
+    },
+    "AMPLIFY_function_docs_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "docs"
+        }
+      ]
+    },
+    "AMPLIFY_function_emaillambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "emaillambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_emaillambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "emaillambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_emaillambda_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "emaillambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_squarelambda_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "squarelambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_squarelambda_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "squarelambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_squarelambda_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "squarelambda"
+        }
+      ]
+    },
+    "AMPLIFY_function_transactionReport_deploymentBucketName": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "transactionReport"
+        }
+      ]
+    },
+    "AMPLIFY_function_transactionReport_s3Key": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "transactionReport"
+        }
+      ]
+    },
+    "AMPLIFY_function_transactionReport_secretsPathAmplifyAppId": {
+      "usedBy": [
+        {
+          "category": "function",
+          "resourceName": "transactionReport"
         }
       ]
     }
   },
   "storage": {
     "brendanhousestorage": {
-      "service": "S3",
-      "providerPlugin": "awscloudformation"
-    }
-  },
-  "function": {
-    "squarelambda": {
-      "build": true,
       "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
-    },
-    "emaillambda": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
-    },
-    "docs": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
-    },
-    "contact": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda"
-    },
-    "transactionReport": {
-      "build": true,
-      "providerPlugin": "awscloudformation",
-      "service": "Lambda",
-      "dependsOn": []
+      "service": "S3"
     }
   }
 }
