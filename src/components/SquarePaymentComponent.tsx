@@ -41,7 +41,9 @@ function SquarePaymentComponent({ setPaymentResult }) {
   let [payerEmail, setPayerEmail] = useState<string>('');
   let [card, setCard] = useState<any>({});
   let [amount, setAmount] = useState<string>('');
-  let [paymentType, setPaymentType] = useState<number>(paytype_param === 'spdirect' ? PAYTYPE_SPDIRECT : PAYTYPE_NONE);
+  let [paymentType, setPaymentType] = useState<number>(
+    paytype_param === 'spdirect' ? PAYTYPE_SPDIRECT : PAYTYPE_NONE
+  );
   let [buttonClicked, setButtonClicked] = useState<boolean>(false);
   const formRef = useRef(null);
 
@@ -97,13 +99,13 @@ function SquarePaymentComponent({ setPaymentResult }) {
   };
 
   return (
-    <FadeIn delay={625}>
-      <Form noValidate id="payment-form" ref={formRef} className="payment-background">
+    <FadeIn delay={825}>
+      <Form noValidate id='payment-form' ref={formRef} className='payment-background'>
         <Form.Row>
           <Col>
             <Form.Control
-              type="text"
-              placeholder="First name"
+              type='text'
+              placeholder='First name'
               value={payerFirstName}
               onChange={(e) => setPayerFirstName(e.target.value)}
               isInvalid={!validateFname() && buttonClicked}
@@ -111,8 +113,8 @@ function SquarePaymentComponent({ setPaymentResult }) {
           </Col>
           <Col>
             <Form.Control
-              type="text"
-              placeholder="Last name"
+              type='text'
+              placeholder='Last name'
               value={payerLastName}
               onChange={(e) => setPayerLastName(e.target.value)}
               isInvalid={!validateLname() && buttonClicked}
@@ -122,8 +124,8 @@ function SquarePaymentComponent({ setPaymentResult }) {
         <Form.Row>
           <Col>
             <Form.Control
-              type="email"
-              placeholder="Email"
+              type='email'
+              placeholder='Email'
               value={payerEmail}
               onChange={(e) => setPayerEmail(e.target.value)}
               isInvalid={!validateEmail() && buttonClicked}
@@ -131,7 +133,7 @@ function SquarePaymentComponent({ setPaymentResult }) {
           </Col>
           <Col>
             <Form.Control
-              as="select"
+              as='select'
               value={paymentType}
               onChange={(e) => {
                 const ptype = +e.target.value;
@@ -156,7 +158,7 @@ function SquarePaymentComponent({ setPaymentResult }) {
               </InputGroup.Prepend>
               <Form.Control
                 required
-                placeholder="Amount"
+                placeholder='Amount'
                 disabled={
                   paymentType !== PAYTYPE_TUITION &&
                   paymentType !== PAYTYPE_DONATION &&
@@ -188,11 +190,11 @@ function SquarePaymentComponent({ setPaymentResult }) {
           </Col>
         </Form.Row>
         <Form.Group style={{ marginTop: '25px' }}>
-          <div id="card-container"></div>
+          <div id='card-container'></div>
         </Form.Group>
         <Form.Row>
-          <Col className="text-right">
-            <Form.Text className="text-muted">
+          <Col className='text-right'>
+            <Form.Text className='text-muted'>
               We store your name &amp; email in Square to keep track of payments and send receipts.
             </Form.Text>
           </Col>
@@ -200,9 +202,9 @@ function SquarePaymentComponent({ setPaymentResult }) {
         <Form.Row>
           <Col>
             <Button
-              variant="primary"
-              id="card-button"
-              className="float-right my-2"
+              variant='primary'
+              id='card-button'
+              className='float-right my-2'
               onClick={async () => {
                 // validation checks
                 setButtonClicked(true);

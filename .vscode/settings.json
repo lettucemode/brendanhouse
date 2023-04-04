@@ -11,5 +11,7 @@
   "editor.tabSize": 2,
   "editor.formatOnSave": true,
   "editor.defaultFormatter": "esbenp.prettier-vscode",
-  "prettier.printWidth": 110
+  "prettier.printWidth": 110,
+  "prettier.jsxSingleQuote": true,
+  "prettier.singleQuote": true
 }
