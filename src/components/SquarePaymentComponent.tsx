@@ -15,6 +15,7 @@ const PAYTYPE_DEPOSIT = 2;
 const PAYTYPE_TUITION = 3;
 const PAYTYPE_DONATION = 4;
 const PAYTYPE_SPDIRECT = 5;
+const PAYTYPE_RTHOUSE = 6;
 
 async function tokenize(paymentMethod: any) {
   const tokenResult = await paymentMethod.tokenize();
@@ -151,6 +152,7 @@ function SquarePaymentComponent({ setPaymentResult }) {
               <option value={PAYTYPE_TUITION}>Tuition Payment</option>
               <option value={PAYTYPE_SPDIRECT}>Spiritual Direction</option>
               {/* <option value={PAYTYPE_DONATION}>Donation</option> */}
+              <option value={PAYTYPE_RTHOUSE}>Retreat House</option>
             </Form.Control>
             <InputGroup>
               <InputGroup.Prepend>
@@ -162,7 +164,8 @@ function SquarePaymentComponent({ setPaymentResult }) {
                 disabled={
                   paymentType !== PAYTYPE_TUITION &&
                   paymentType !== PAYTYPE_DONATION &&
-                  paymentType !== PAYTYPE_SPDIRECT
+                  paymentType !== PAYTYPE_SPDIRECT &&
+                  paymentType !== PAYTYPE_RTHOUSE
                 }
                 value={amount}
                 onChange={(e) => {

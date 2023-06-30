@@ -99,6 +99,8 @@ app.post('/square', async function(req, res) {
     note = 'DONATION'
   } else if (req.body.paymentType === 5) {
     note = 'SPIRITUAL DIRECTION'
+  } else if (req.body.paymentType === 6) {
+    note = 'RETREAT HOUSE'
   }
   
   // now submit the payment
