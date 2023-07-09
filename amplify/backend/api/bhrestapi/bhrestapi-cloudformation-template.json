@@ -1,7 +1,10 @@
 {
-  "Description": "API Gateway Resource for AWS Amplify CLI",
   "AWSTemplateFormatVersion": "2010-09-09",
+  "Description": "{\"createdOn\":\"Windows\",\"createdBy\":\"Amplify\",\"createdWith\":\"11.0.3\",\"stackType\":\"api-API Gateway\",\"metadata\":{}}",
   "Parameters": {
+    "env": {
+      "Type": "String"
+    },
     "functionsquarelambdaName": {
       "Type": "String",
       "Default": "functionsquarelambdaName"
@@ -33,9 +36,6 @@
     "functioncontactArn": {
       "Type": "String",
       "Default": "functioncontactArn"
-    },
-    "env": {
-      "Type": "String"
     }
   },
   "Conditions": {
@@ -48,170 +48,12 @@
       ]
     }
   },
-  "Outputs": {
-    "RootUrl": {
-      "Description": "Root URL of the API gateway",
-      "Value": {
-        "Fn::Join": [
-          "",
-          [
-            "https://",
-            {
-              "Ref": "bhrestapi"
-            },
-            ".execute-api.",
-            {
-              "Ref": "AWS::Region"
-            },
-            ".amazonaws.com/",
-            {
-              "Fn::If": [
-                "ShouldNotCreateEnvResources",
-                "Prod",
-                {
-                  "Ref": "env"
-                }
-              ]
-            }
-          ]
-        ]
-      }
-    },
-    "ApiName": {
-      "Description": "API Friendly name",
-      "Value": "bhrestapi"
-    },
-    "ApiId": {
-      "Description": "API ID (prefix of API URL)",
-      "Value": {
-        "Ref": "bhrestapi"
-      }
-    }
-  },
   "Resources": {
-    "functionsquarelambdaPermissionbhrestapi": {
-      "Type": "AWS::Lambda::Permission",
-      "Properties": {
-        "Action": "lambda:InvokeFunction",
-        "FunctionName": {
-          "Ref": "functionsquarelambdaName"
-        },
-        "Principal": "apigateway.amazonaws.com",
-        "SourceArn": {
-          "Fn::Join": [
-            "",
-            [
-              "arn:aws:execute-api:",
-              {
-                "Ref": "AWS::Region"
-              },
-              ":",
-              {
-                "Ref": "AWS::AccountId"
-              },
-              ":",
-              {
-                "Ref": "bhrestapi"
-              },
-              "/*/*/*"
-            ]
-          ]
-        }
-      }
-    },
-    "functionemaillambdaPermissionbhrestapi": {
-      "Type": "AWS::Lambda::Permission",
-      "Properties": {
-        "Action": "lambda:InvokeFunction",
-        "FunctionName": {
-          "Ref": "functionemaillambdaName"
-        },
-        "Principal": "apigateway.amazonaws.com",
-        "SourceArn": {
-          "Fn::Join": [
-            "",
-            [
-              "arn:aws:execute-api:",
-              {
-                "Ref": "AWS::Region"
-              },
-              ":",
-              {
-                "Ref": "AWS::AccountId"
-              },
-              ":",
-              {
-                "Ref": "bhrestapi"
-              },
-              "/*/*/*"
-            ]
-          ]
-        }
-      }
-    },
-    "functiondocsPermissionbhrestapi": {
-      "Type": "AWS::Lambda::Permission",
-      "Properties": {
-        "Action": "lambda:InvokeFunction",
-        "FunctionName": {
-          "Ref": "functiondocsName"
-        },
-        "Principal": "apigateway.amazonaws.com",
-        "SourceArn": {
-          "Fn::Join": [
-            "",
-            [
-              "arn:aws:execute-api:",
-              {
-                "Ref": "AWS::Region"
-              },
-              ":",
-              {
-                "Ref": "AWS::AccountId"
-              },
-              ":",
-              {
-                "Ref": "bhrestapi"
-              },
-              "/*/*/*"
-            ]
-          ]
-        }
-      }
-    },
-    "functioncontactPermissionbhrestapi": {
-      "Type": "AWS::Lambda::Permission",
-      "Properties": {
-        "Action": "lambda:InvokeFunction",
-        "FunctionName": {
-          "Ref": "functioncontactName"
-        },
-        "Principal": "apigateway.amazonaws.com",
-        "SourceArn": {
-          "Fn::Join": [
-            "",
-            [
-              "arn:aws:execute-api:",
-              {
-                "Ref": "AWS::Region"
-              },
-              ":",
-              {
-                "Ref": "AWS::AccountId"
-              },
-              ":",
-              {
-                "Ref": "bhrestapi"
-              },
-              "/*/*/*"
-            ]
-          ]
-        }
-      }
-    },
     "bhrestapi": {
       "Type": "AWS::ApiGateway::RestApi",
       "Properties": {
+        "Description": "",
+        "Name": "bhrestapi",
         "Body": {
           "swagger": "2.0",
           "info": {
@@ -318,6 +160,11 @@
                     }
                   }
                 },
+                "security": [
+                  {
+                    "sigv4": []
+                  }
+                ],
                 "x-amazon-apigateway-integration": {
                   "responses": {
                     "default": {
@@ -343,12 +190,7 @@
                   "passthroughBehavior": "when_no_match",
                   "httpMethod": "POST",
                   "type": "aws_proxy"
-                },
-                "security": [
-                  {
-                    "sigv4": []
-                  }
-                ]
+                }
               }
             },
             "/square/{proxy+}": {
@@ -418,6 +260,11 @@
                     }
                   }
                 },
+                "security": [
+                  {
+                    "sigv4": []
+                  }
+                ],
                 "x-amazon-apigateway-integration": {
                   "responses": {
                     "default": {
@@ -443,12 +290,7 @@
                   "passthroughBehavior": "when_no_match",
                   "httpMethod": "POST",
                   "type": "aws_proxy"
-                },
-                "security": [
-                  {
-                    "sigv4": []
-                  }
-                ]
+                }
               }
             },
             "/email": {
@@ -518,6 +360,11 @@
                     }
                   }
                 },
+                "security": [
+                  {
+                    "sigv4": []
+                  }
+                ],
                 "x-amazon-apigateway-integration": {
                   "responses": {
                     "default": {
@@ -543,12 +390,7 @@
                   "passthroughBehavior": "when_no_match",
                   "httpMethod": "POST",
                   "type": "aws_proxy"
-                },
-                "security": [
-                  {
-                    "sigv4": []
-                  }
-                ]
+                }
               }
             },
             "/email/{proxy+}": {
@@ -618,6 +460,11 @@
                     }
                   }
                 },
+                "security": [
+                  {
+                    "sigv4": []
+                  }
+                ],
                 "x-amazon-apigateway-integration": {
                   "responses": {
                     "default": {
@@ -643,12 +490,7 @@
                   "passthroughBehavior": "when_no_match",
                   "httpMethod": "POST",
                   "type": "aws_proxy"
-                },
-                "security": [
-                  {
-                    "sigv4": []
-                  }
-                ]
+                }
               }
             },
             "/docs": {
@@ -718,6 +560,11 @@
                     }
                   }
                 },
+                "security": [
+                  {
+                    "sigv4": []
+                  }
+                ],
                 "x-amazon-apigateway-integration": {
                   "responses": {
                     "default": {
@@ -743,12 +590,7 @@
                   "passthroughBehavior": "when_no_match",
                   "httpMethod": "POST",
                   "type": "aws_proxy"
-                },
-                "security": [
-                  {
-                    "sigv4": []
-                  }
-                ]
+                }
               }
             },
             "/docs/{proxy+}": {
@@ -818,6 +660,11 @@
                     }
                   }
                 },
+                "security": [
+                  {
+                    "sigv4": []
+                  }
+                ],
                 "x-amazon-apigateway-integration": {
                   "responses": {
                     "default": {
@@ -843,12 +690,7 @@
                   "passthroughBehavior": "when_no_match",
                   "httpMethod": "POST",
                   "type": "aws_proxy"
-                },
-                "security": [
-                  {
-                    "sigv4": []
-                  }
-                ]
+                }
               }
             },
             "/contact": {
@@ -918,6 +760,11 @@
                     }
                   }
                 },
+                "security": [
+                  {
+                    "sigv4": []
+                  }
+                ],
                 "x-amazon-apigateway-integration": {
                   "responses": {
                     "default": {
@@ -943,12 +790,7 @@
                   "passthroughBehavior": "when_no_match",
                   "httpMethod": "POST",
                   "type": "aws_proxy"
-                },
-                "security": [
-                  {
-                    "sigv4": []
-                  }
-                ]
+                }
               }
             },
             "/contact/{proxy+}": {
@@ -1018,6 +860,11 @@
                     }
                   }
                 },
+                "security": [
+                  {
+                    "sigv4": []
+                  }
+                ],
                 "x-amazon-apigateway-integration": {
                   "responses": {
                     "default": {
@@ -1043,12 +890,7 @@
                   "passthroughBehavior": "when_no_match",
                   "httpMethod": "POST",
                   "type": "aws_proxy"
-                },
-                "security": [
-                  {
-                    "sigv4": []
-                  }
-                ]
+                }
               }
             }
           },
@@ -1087,47 +929,132 @@
             }
           }
         },
-        "Description": "",
-        "FailOnWarnings": true,
-        "Name": "bhrestapi"
+        "FailOnWarnings": true
       }
     },
-    "bhrestapiDefault4XXResponsebc9af09c": {
-      "Type": "AWS::ApiGateway::GatewayResponse",
+    "functionsquarelambdaPermissionbhrestapi": {
+      "Type": "AWS::Lambda::Permission",
       "Properties": {
-        "ResponseType": "DEFAULT_4XX",
-        "RestApiId": {
-          "Ref": "bhrestapi"
+        "FunctionName": {
+          "Ref": "functionsquarelambdaName"
         },
-        "ResponseParameters": {
-          "gatewayresponse.header.Access-Control-Allow-Origin": "'*'",
-          "gatewayresponse.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
-          "gatewayresponse.header.Access-Control-Allow-Methods": "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'",
-          "gatewayresponse.header.Access-Control-Expose-Headers": "'Date,X-Amzn-ErrorType'"
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:aws:execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "bhrestapi"
+              },
+              "/*/*/*"
+            ]
+          ]
         }
       }
     },
-    "bhrestapiDefault5XXResponsebc9af09c": {
-      "Type": "AWS::ApiGateway::GatewayResponse",
+    "functionemaillambdaPermissionbhrestapi": {
+      "Type": "AWS::Lambda::Permission",
       "Properties": {
-        "ResponseType": "DEFAULT_5XX",
-        "RestApiId": {
-          "Ref": "bhrestapi"
+        "FunctionName": {
+          "Ref": "functionemaillambdaName"
         },
-        "ResponseParameters": {
-          "gatewayresponse.header.Access-Control-Allow-Origin": "'*'",
-          "gatewayresponse.header.Access-Control-Allow-Headers": "'Content-Type,X-Amz-Date,Authorization,X-Api-Key,X-Amz-Security-Token'",
-          "gatewayresponse.header.Access-Control-Allow-Methods": "'DELETE,GET,HEAD,OPTIONS,PATCH,POST,PUT'",
-          "gatewayresponse.header.Access-Control-Expose-Headers": "'Date,X-Amzn-ErrorType'"
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:aws:execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "bhrestapi"
+              },
+              "/*/*/*"
+            ]
+          ]
         }
       }
     },
-    "DeploymentAPIGWbhrestapi32d715ac": {
+    "functiondocsPermissionbhrestapi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "functiondocsName"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:aws:execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "bhrestapi"
+              },
+              "/*/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "functioncontactPermissionbhrestapi": {
+      "Type": "AWS::Lambda::Permission",
+      "Properties": {
+        "FunctionName": {
+          "Ref": "functioncontactName"
+        },
+        "Action": "lambda:InvokeFunction",
+        "Principal": "apigateway.amazonaws.com",
+        "SourceArn": {
+          "Fn::Join": [
+            "",
+            [
+              "arn:aws:execute-api:",
+              {
+                "Ref": "AWS::Region"
+              },
+              ":",
+              {
+                "Ref": "AWS::AccountId"
+              },
+              ":",
+              {
+                "Ref": "bhrestapi"
+              },
+              "/*/*/*"
+            ]
+          ]
+        }
+      }
+    },
+    "DeploymentAPIGWbhrestapi424b2ed9": {
       "Type": "AWS::ApiGateway::Deployment",
       "Properties": {
-        "RestApiId": {
-          "Ref": "bhrestapi"
-        },
         "Description": "The Development stage deployment of your API.",
         "StageName": {
           "Fn::If": [
@@ -1137,12 +1064,51 @@
               "Ref": "env"
             }
           ]
+        },
+        "RestApiId": {
+          "Ref": "bhrestapi"
         }
-      },
-      "DependsOn": [
-        "bhrestapiDefault4XXResponsebc9af09c",
-        "bhrestapiDefault5XXResponsebc9af09c"
-      ]
+      }
+    }
+  },
+  "Outputs": {
+    "RootUrl": {
+      "Description": "Root URL of the API gateway",
+      "Value": {
+        "Fn::Join": [
+          "",
+          [
+            "https://",
+            {
+              "Ref": "bhrestapi"
+            },
+            ".execute-api.",
+            {
+              "Ref": "AWS::Region"
+            },
+            ".amazonaws.com/",
+            {
+              "Fn::If": [
+                "ShouldNotCreateEnvResources",
+                "Prod",
+                {
+                  "Ref": "env"
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    },
+    "ApiName": {
+      "Description": "API Friendly name",
+      "Value": "bhrestapi"
+    },
+    "ApiId": {
+      "Description": "API ID (prefix of API URL)",
+      "Value": {
+        "Ref": "bhrestapi"
+      }
     }
   }
 }

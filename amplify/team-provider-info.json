@@ -41,7 +41,8 @@
           "deploymentBucketName": "amplify-brendanhouse-prod-193950-deployment",
           "s3Key": "amplify-builds/transactionReport-4e59376f354d71507842-build.zip",
           "secretsPathAmplifyAppId": "d3iscs5oi8hzql"
-        }
+        },
+        "brendanhousestorage": {}
       },
       "storage": {
         "brendanhousestorage": {}
@@ -50,41 +51,53 @@
   },
   "dev": {
     "awscloudformation": {
-      "AuthRoleName": "amplify-brendanhouse-dev-115720-authRole",
-      "UnauthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-dev-115720-unauthRole",
-      "AuthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-dev-115720-authRole",
+      "AuthRoleName": "amplify-brendanhouse-dev-141440-authRole",
+      "UnauthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-dev-141440-unauthRole",
+      "AuthRoleArn": "arn:aws:iam::782809024315:role/amplify-brendanhouse-dev-141440-authRole",
       "Region": "us-east-2",
-      "DeploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
-      "UnauthRoleName": "amplify-brendanhouse-dev-115720-unauthRole",
-      "StackName": "amplify-brendanhouse-dev-115720",
-      "StackId": "arn:aws:cloudformation:us-east-2:782809024315:stack/amplify-brendanhouse-dev-115720/8484d060-e197-11eb-bf3f-06bce821a7be",
-      "AmplifyAppId": "d3iscs5oi8hzql"
+      "DeploymentBucketName": "amplify-brendanhouse-dev-141440-deployment",
+      "UnauthRoleName": "amplify-brendanhouse-dev-141440-unauthRole",
+      "StackName": "amplify-brendanhouse-dev-141440",
+      "StackId": "arn:aws:cloudformation:us-east-2:782809024315:stack/amplify-brendanhouse-dev-141440/78843270-1e84-11ee-acdc-067b217e4815",
+      "AmplifyAppId": "d3iscs5oi8hzql",
+      "APIGatewayAuthURL": "https://s3.amazonaws.com/amplify-brendanhouse-dev-141440-deployment/amplify-cfn-templates/api/APIGatewayAuthStack.json"
     },
     "categories": {
       "auth": {
         "brendanhousef32a71c5": {}
       },
       "function": {
-        "squarelambda": {
-          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
-          "s3Key": "amplify-builds/squarelambda-717971504d7656796d61-build.zip"
-        },
-        "emaillambda": {
-          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
-          "s3Key": "amplify-builds/emaillambda-4b4d574d44436c344834-build.zip"
+        "contact": {
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql",
+          "deploymentBucketName": "amplify-brendanhouse-dev-141440-deployment",
+          "s3Key": "amplify-builds/contact-67754365444938646d44-build.zip"
         },
         "docs": {
-          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
-          "s3Key": "amplify-builds/docs-5a3861676d7052463467-build.zip"
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql",
+          "deploymentBucketName": "amplify-brendanhouse-dev-141440-deployment",
+          "s3Key": "amplify-builds/docs-4978476a654162596c7a-build.zip"
         },
-        "contact": {
-          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
-          "s3Key": "amplify-builds/contact-6e58574a594d4c534b56-build.zip"
+        "emaillambda": {
+          "deploymentBucketName": "amplify-brendanhouse-dev-141440-deployment",
+          "s3Key": "amplify-builds/emaillambda-4b4d574d44436c344834-build.zip"
+        },
+        "squarelambda": {
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql",
+          "deploymentBucketName": "amplify-brendanhouse-dev-141440-deployment",
+          "s3Key": "amplify-builds/squarelambda-6a304239653564704e55-build.zip"
         },
         "transactionReport": {
-          "deploymentBucketName": "amplify-brendanhouse-dev-115720-deployment",
-          "s3Key": "amplify-builds/transactionReport-57734e36463966653678-build.zip"
-        }
+          "secretsPathAmplifyAppId": "d3iscs5oi8hzql",
+          "deploymentBucketName": "amplify-brendanhouse-dev-141440-deployment",
+          "s3Key": "amplify-builds/transactionReport-337732755841364f3576-build.zip"
+        },
+        "brendanhousestorage": {}
+      },
+      "api": {
+        "bhrestapi": {}
+      },
+      "storage": {
+        "brendanhousestorage": {}
       }
     }
   }

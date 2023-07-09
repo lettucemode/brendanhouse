@@ -55,7 +55,15 @@
     },
     "docs": {
       "build": true,
-      "dependsOn": [],
+      "dependsOn": [
+        {
+          "attributes": [
+            "BucketName"
+          ],
+          "category": "storage",
+          "resourceName": "brendanhousestorage"
+        }
+      ],
       "providerPlugin": "awscloudformation",
       "service": "Lambda"
     },
@@ -136,14 +144,6 @@
       ]
     },
     "AMPLIFY_function_emaillambda_s3Key": {
-      "usedBy": [
-        {
-          "category": "function",
-          "resourceName": "emaillambda"
-        }
-      ]
-    },
-    "AMPLIFY_function_emaillambda_secretsPathAmplifyAppId": {
       "usedBy": [
         {
           "category": "function",

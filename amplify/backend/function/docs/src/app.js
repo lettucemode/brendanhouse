@@ -12,6 +12,12 @@ const { Parameters } = await (new aws.SSM())
 
 Parameters will be of the form { Name: 'secretName', Value: 'secretValue', ... }[]
 */
+/* Amplify Params - DO NOT EDIT
+	ENV
+	REGION
+	STORAGE_BRENDANHOUSESTORAGE_BUCKETNAME
+Amplify Params - DO NOT EDIT */
+
 const express = require('express')
 const aws = require("aws-sdk");
 const awsServerlessExpressMiddleware = require('aws-serverless-express/middleware')
